@@ -4,47 +4,47 @@
 * 1.0
 * Itagaki Fumihiko 06-Dec-92  Debug and brush up.
 * 1.1
-* Itagaki Fumihiko 08-Dec-92  �{�����[���E���x���̃u���b�N�����������v��
-* Itagaki Fumihiko 16-Dec-92  / �̍ŏI�X�V������ 0-0-0 ���� 0-1-1 �ɕύX
-* Itagaki Fumihiko 23-Dec-92  -V �I�v�V�����̒ǉ�
+* Itagaki Fumihiko 08-Dec-92  ボリューム・ラベルのブロック数も正しく計数
+* Itagaki Fumihiko 16-Dec-92  / の最終更新時刻を 0-0-0 から 0-1-1 に変更
+* Itagaki Fumihiko 23-Dec-92  -V オプションの追加
 * Itagaki Fumihiko 10-Jan-93  GETPDB -> lea $10(a0),a0
-* Itagaki Fumihiko 20-Jan-93  ���� - �� -- �̈����̕ύX
-* Itagaki Fumihiko 22-Jan-93  �X�^�b�N���g��
+* Itagaki Fumihiko 20-Jan-93  引数 - と -- の扱いの変更
+* Itagaki Fumihiko 22-Jan-93  スタックを拡張
 * 1.2
-* Itagaki Fumihiko 04-Feb-93  LNDRV_realpathcpy->LNDRV_O_FILES �� LNDRV_LINK_FILES �ɕύX
-* Itagaki Fumihiko 06-Feb-93  JOIN���ꂽ�h���C�u���̃T�u�f�B���N�g���ɂ�-V�������悤�C��
-* Itagaki Fumihiko 06-Feb-93  ���΃p�X�Őݒ肳�ꂽ�V���{���b�N�E�����N������������
-* Itagaki Fumihiko 06-Feb-93  ���[�v�����V���{���b�N�E�����N������������
-* Itagaki Fumihiko 07-Feb-93  �����̖����� / ���t���Ă���΁C���ꂪ�f�B���N�g���ւ̃V���{
-*                             ���b�N�E�����N�ł���Ƃ��ɁC-l �I�v�V������ -v �I�v�V������
-*                             �w�肳��Ă��Ă��f�B���N�g�������Ƃ��ď�������
+* Itagaki Fumihiko 04-Feb-93  LNDRV_realpathcpy->LNDRV_O_FILES を LNDRV_LINK_FILES に変更
+* Itagaki Fumihiko 06-Feb-93  JOINされたドライブ内のサブディレクトリにも-Vが効くよう修正
+* Itagaki Fumihiko 06-Feb-93  相対パスで設定されたシンボリック・リンクも正しく処理
+* Itagaki Fumihiko 06-Feb-93  ループしたシンボリック・リンクも正しく処理
+* Itagaki Fumihiko 07-Feb-93  引数の末尾に / が付いていれば，それがディレクトリへのシンボ
+*                             リック・リンクであるときに，-l オプションや -v オプションが
+*                             指定されていてもディレクトリ引数として処理する
 * 1.3
-* Itagaki Fumihiko 03-Jan-94  lndrv���g�ݍ��܂�Ă���ƁCls -ds . �� . �̃u���b�N�T�C�Y��
-*                             0 �ƕ\������Ă��܂��s����C��
-* Itagaki Fumihiko 03-Jan-94  -w <��> �� -w<��> �Ə����Ă��ǂ�
-* Itagaki Fumihiko 03-Jan-94  -V �̏����̏C��
-* Itagaki Fumihiko 03-Jan-94  -V �̏����̍�����
-* Itagaki Fumihiko 04-Jan-94  �����Ɋ܂܂��h���C�u����啶���ɕϊ�����̂���߂�
-* Itagaki Fumihiko 04-Jan-94  �����Ɋ܂܂��e\�f���e/�f�ɕϊ�����̂���߂�
-* Itagaki Fumihiko 04-Jan-94  TwentyOne +R �ɑΉ�
-* Itagaki Fumihiko 04-Feb-94  �\�[�g�̔�r�������t���ɂȂ��Ă����̂𕄍������ɏC��
+* Itagaki Fumihiko 03-Jan-94  lndrvが組み込まれていると，ls -ds . で . のブロックサイズが
+*                             0 と表示されてしまう不具合を修正
+* Itagaki Fumihiko 03-Jan-94  -w <幅> は -w<幅> と書いても良い
+* Itagaki Fumihiko 03-Jan-94  -V の処理の修正
+* Itagaki Fumihiko 03-Jan-94  -V の処理の高速化
+* Itagaki Fumihiko 04-Jan-94  引数に含まれるドライブ名を大文字に変換するのをやめた
+* Itagaki Fumihiko 04-Jan-94  引数に含まれる‘\’を‘/’に変換するのをやめた
+* Itagaki Fumihiko 04-Jan-94  TwentyOne +R に対応
+* Itagaki Fumihiko 04-Feb-94  ソートの比較が符号付きになっていたのを符号無しに修正
 * 1.4
-* Itagaki Fumihiko 23-Dec-94  ���݂��Ȃ��h���C�u�̓G���[�ɂȂ�悤�ɂ���
-* Itagaki Fumihiko 23-Dec-94  v1.3 �Œǉ������w�����̖����� / ���t���Ă���΁C���ꂪ�f�B
-*                             ���N�g���ւ̃V���{���b�N�E�����N�ł���Ƃ��ɁC-l �I�v�V����
-*                             �� -v �I�v�V�������w�肳��Ă��Ă��f�B���N�g�������Ƃ��ď�
-*                             ������x�@�\���C-p �I�v�V������ -F �I�v�V�������w�肳��Ă�
-*                             �Ȃ��ƌ����Ȃ��s����C��
-* Itagaki Fumihiko 23-Dec-94  -P �I�v�V������ǉ�
-* Itagaki Fumihiko 23-Dec-94  -E �I�v�V������ǉ�
+* Itagaki Fumihiko 23-Dec-94  存在しないドライブはエラーになるようにした
+* Itagaki Fumihiko 23-Dec-94  v1.3 で追加した『引数の末尾に / が付いていれば，それがディ
+*                             レクトリへのシンボリック・リンクであるときに，-l オプション
+*                             や -v オプションが指定されていてもディレクトリ引数として処
+*                             理する』機能が，-p オプションか -F オプションが指定されてい
+*                             ないと効かない不具合を修正
+* Itagaki Fumihiko 23-Dec-94  -P オプションを追加
+* Itagaki Fumihiko 23-Dec-94  -E オプションを追加
 * 1.5
 *
 * Usage: ls [ -1ABCDEFGLPQRSUVXabdeflmpqrstvx ] [ -w cols ] [ -- ] [ file ] ...
 *
-* �I�v�V������ǉ�����Ƃ��͒��ӂ��K�v�C
-* �����炱����Ńt���O���`�F�b�N���āA���ʂȏ������Ȃ��Ă���D
+* オプションを追加するときは注意が必要，
+* あちらこちらでフラグをチェックして、無駄な処理を省いている．
 *
-* �����Ă�����̂͊o�債�Ă�����ׂ��D
+* 動いているものは覚悟していじるべし．
 
 .include doscall.h
 .include error.h
@@ -79,21 +79,21 @@
 .xref getenv
 .xref printfi
 
-REQUIRED_OSVER		equ	$200			*  2.00�ȍ~
+REQUIRED_OSVER		equ	$200			*  2.00以降
 BLOCKSIZE		equ	1024
 OLDEST_DATIME		equ	((1<<5)|1)<<16
 
-MAXRECURSE	equ	64	*  �T�u�f�B���N�g�����������邽�߂ɍċA����񐔂̏���D
-				*  MAXDIR �i�p�X���̃f�B���N�g���� "/1/2/3/../" �̒����j
-				*  �� 64 �ł��邩��A31�ŏ[���ł��邪�C
-				*  �V���{���b�N�E�����N���l������ 64 �Ƃ���D
-				*  �X�^�b�N�ʂɂ������D
+MAXRECURSE	equ	64	*  サブディレクトリを検索するために再帰する回数の上限．
+				*  MAXDIR （パス名のディレクトリ部 "/1/2/3/../" の長さ）
+				*  が 64 であるから、31で充分であるが，
+				*  シンボリック・リンクを考慮して 64 とする．
+				*  スタック量にかかわる．
 DEFAULT_COLUMNS	equ	80
 LINEBUFSIZE	equ	1024
-FILELIST_UNIT	equ	32	*  2�ׂ̂���łȂ���΂Ȃ�Ȃ�
-FATCHK_STATIC	equ	256	*  �ÓI�o�b�t�@��fatchk�ł���悤�ɂ��Ă���FAT�`�F�C����
+FILELIST_UNIT	equ	32	*  2のべき乗でなければならない
+FATCHK_STATIC	equ	256	*  静的バッファでfatchkできるようにしておくFATチェイン数
 ********************************
-* ENTRY�\����
+* ENTRY構造体
 ********************************
 .offset 0
 entry_name:	ds.b	MAXPATH+1
@@ -111,7 +111,7 @@ entry_linkpath:	ds.l	1
 .even
 entry_struct_size:
 
-* entry_flag �̃r�b�g�̒�`
+* entry_flag のビットの定義
 FLAGBIT_SUBDIR	equ	0
 FLAGBIT_NOSTAT	equ	1
 FLAGBIT_IGNORE	equ	2
@@ -141,12 +141,12 @@ start:
 		bra.s	start1
 		dc.b	'#HUPAIR',0
 start1:
-		lea	stack_bottom,a7			*  A7 := �X�^�b�N�̒�
+		lea	stack_bottom,a7			*  A7 := スタックの底
 		DOS	_VERNUM
 		cmp.w	#REQUIRED_OSVER,d0
 		bcs	dos_version_mismatch
 
-		lea	$10(a0),a0			*  A0 : PDB�A�h���X
+		lea	$10(a0),a0			*  A0 : PDBアドレス
 		move.l	a7,d0
 		sub.l	a0,d0
 		move.l	d0,-(a7)
@@ -154,32 +154,32 @@ start1:
 		DOS	_SETBLOCK
 		addq.l	#8,a7
 	*
-	*  �����ł͂Ȃ��N��\������͈͂����肷��D
+	*  時刻ではなく年を表示する範囲を決定する．
 	*
 		DOS	_GETDATE
 		move.w	d0,present_date
 		moveq	#0,d1
 		move.w	d0,d1
-		and.w	#$fe00,d1			*  �N
+		and.w	#$fe00,d1			*  年
 		move.w	d0,d2
-		and.w	#$01ff,d2			*  ����
-		and.w	#$01e0,d0			*  ��
-		cmp.w	#$00e0,d0			*  7��
+		and.w	#$01ff,d2			*  月日
+		and.w	#$01e0,d0			*  月
+		cmp.w	#$00e0,d0			*  7月
 		blo	six_month_ago_1
 
-		sub.w	#$00c0,d2			*  ����-6��
-		add.l	#$0200,d1			*  +1�N(�Q�^)
+		sub.w	#$00c0,d2			*  月日-6月
+		add.l	#$0200,d1			*  +1年(ゲタ)
 		bra	six_month_ago_ok
 
 six_month_ago_1:
-		add.w	#$00c0,d2			*  ����+6��
-							*  ������1�N�����Ȃ���΂Ȃ�Ȃ��̂�
-							*  +1�N�̃Q�^�͑��E
+		add.w	#$00c0,d2			*  月日+6月
+							*  ここで1年引かなければならないので
+							*  +1年のゲタは相殺
 six_month_ago_ok:
-		or.w	d2,d1				*  �N+1�N-6��
+		or.w	d2,d1				*  年+1年-6月
 		move.l	d1,cutoff_date
 	*
-	*  �[���̕��𓾂�
+	*  端末の幅を得る
 	*
 		lea	word_COLUMNS(pc),a0
 		bsr	getenv
@@ -200,13 +200,13 @@ columns_default:
 columns_ok:
 		move.l	d0,columns
 	*
-	*  �o�͏��������߂�
+	*  出力書式を決める
 	*
 		moveq	#0,d1				*  -1
-		moveq	#1,d0				*  �o�͂�
-		bsr	is_chrdev			*  �u���b�N�E�f�o�C�X���H
+		moveq	#1,d0				*  出力は
+		bsr	is_chrdev			*  ブロック・デバイスか？
 		sne	output_is_chrdev
-		beq	set_default_format		*  -- �u���b�N�E�f�o�C�X�ł���
+		beq	set_default_format		*  -- ブロック・デバイスである
 
 		moveq	#1,d1				*  -C
 set_default_format:
@@ -214,26 +214,26 @@ set_default_format:
 		lea	cmp_name(pc),a0
 		move.l	a0,cmp_func
 	*
-	*  lndrv�풓�`�F�b�N
+	*  lndrv常駐チェック
 	*
 		bsr	getlnenv
 		move.l	d0,lndrv
 	*
-	*  �������ъi�[�G���A���m�ۂ���
+	*  引数並び格納エリアを確保する
 	*
-		lea	1(a2),a0			*  A0 := �R�}���h���C���̕�����̐擪�A�h���X
-		bsr	strlen				*  D0.L := �R�}���h���C���̕�����̒���
+		lea	1(a2),a0			*  A0 := コマンドラインの文字列の先頭アドレス
+		bsr	strlen				*  D0.L := コマンドラインの文字列の長さ
 		addq.l	#1,d0
 		bsr	malloc
 		bmi	insufficient_memory
 
-		movea.l	d0,a1				*  A1 := �������ъi�[�G���A�̐擪�A�h���X
+		movea.l	d0,a1				*  A1 := 引数並び格納エリアの先頭アドレス
 	*
-	*  �������f�R�[�h���C���߂���
+	*  引数をデコードし，解釈する
 	*
-		bsr	DecodeHUPAIR			*  �������f�R�[�h����
-		movea.l	a1,a0				*  A0 : �����|�C���^
-		move.l	d0,d7				*  D7.L : �����J�E���^
+		bsr	DecodeHUPAIR			*  引数をデコードする
+		movea.l	a1,a0				*  A0 : 引数ポインタ
+		move.l	d0,d7				*  D7.L : 引数カウンタ
 decode_opt_loop1:
 		tst.l	d7
 		beq	decode_opt_done
@@ -493,7 +493,7 @@ set_option_done:
 decode_opt_done:
 		movea.l	a0,a1
 	*
-	*  -f�I�v�V�����̏���
+	*  -fオプションの処理
 	*
 		tst.b	fast
 		beq	fast_flag_ok
@@ -511,13 +511,13 @@ decode_opt_done:
 		sf	long_format
 fast_flag_ok:
 	*
-	*  �u���b�N�E�T�C�Y�𓾂�K�v�����邩�ǂ������ׂ�
+	*  ブロック・サイズを得る必要があるかどうか調べる
 	*
 		move.b	print_nblocks,d0
 		or.b	long_format,d0
 		sne	needs_nblocks
 	*
-	*  �e.�f�Ɓe..�f�� stat �𓾂�K�v�����邩�ǂ������ׂ�
+	*  ‘.’と‘..’の stat を得る必要があるかどうか調べる
 	*
 		st	needs_dots_stat
 		cmpi.l	#cmp_time,cmp_func
@@ -530,7 +530,7 @@ fast_flag_ok:
 		sne	needs_dots_stat
 needs_dots_stat_ok:
 	*
-	*  -l�I�v�V�����̏���
+	*  -lオプションの処理
 	*
 		tst.b	long_format
 		beq	long_format_ok
@@ -538,7 +538,7 @@ needs_dots_stat_ok:
 		sf	mark_links
 long_format_ok:
 	*
-	*  -E�I�v�V�����̏���
+	*  -Eオプションの処理
 	*
 		tst.b	color
 		beq	color_ok
@@ -579,7 +579,7 @@ unset_color:
 		sf	color
 color_ok:
 	*
-	*  -L �̌��ʂ��`�F�b�N����
+	*  -L の効果をチェックする
 	*
 		move.b	needs_dots_stat,d0
 		or.b	mark_dirs,d0
@@ -587,10 +587,10 @@ color_ok:
 		or.b	recurse,d0
 		bne	replace_link_ok
 
-		sf	replace_link			*  -L �Ɍ��ʂ͖����B�ނ���B
+		sf	replace_link			*  -L に効果は無い。退ける。
 replace_link_ok:
 	*
-	*  -V �̌��ʂ��`�F�b�N����
+	*  -V の効果をチェックする
 	*
 		tst.b	long_format
 		bne	virtual_dir_size_ok
@@ -601,7 +601,7 @@ replace_link_ok:
 		sf	virtual_dir_size
 virtual_dir_size_ok:
 	*
-	*  �t�@�C����������������
+	*  ファイル引数を検査する
 	*
 		lea	_linebuf(pc),a0
 		move.l	a0,_bufp
@@ -614,7 +614,7 @@ virtual_dir_size_ok:
 		moveq	#1,d7
 args_ok:
 	*
-	*  ������stat���郋�[�v
+	*  引数をstatするループ
 	*
 		clr.w	exitcode
 		clr.l	entry_top
@@ -629,7 +629,7 @@ ls_args_loop:
 		subq.l	#1,d7
 		bne	ls_args_loop
 	*
-	*  �o��
+	*  出力
 	*
 		move.l	number_of_entry,d0
 		beq	exit_program_with_exitcode
@@ -640,7 +640,7 @@ sort_args_done:
 		tst.b	directory
 		beq	split_directory
 	*
-	*  -d ���w�肳��Ă��� ... ��f�B���N�g���ƃf�B���N�g�����܂Ƃ߂ďo��
+	*  -d が指定されている ... 非ディレクトリとディレクトリをまとめて出力
 	*
 		movea.l	entry_top,a0
 		move.l	number_of_entry,d0
@@ -649,13 +649,13 @@ sort_args_done:
 
 split_directory:
 	*
-	*  ��f�B���N�g���ƃf�B���N�g���𕪂��ďo�͂���
+	*  非ディレクトリとディレクトリを分けて出力する
 	*
 		move.l	number_of_entry,d3
-		sub.l	number_of_subdir,d3		*  D3.L : ��f�B���N�g�������̐�
+		sub.l	number_of_subdir,d3		*  D3.L : 非ディレクトリ引数の数
 		beq	ls_dirargs
 		*
-		*  ��f�B���N�g�����܂Ƃ߂ďo��
+		*  非ディレクトリをまとめて出力
 		*
 		move.l	d3,d0
 		lsl.l	#2,d0
@@ -688,18 +688,18 @@ copy_nondir_list_continue:
 		bsr	free
 ls_dirargs:
 		*
-		*  �f�B���N�g���͌ʂɂ��̓��e���o��
+		*  ディレクトリは個別にその内容を出力
 		*
-		move.b	#1,print_dirheader		*  1 : ���s���ăf�B���N�g���E�w�b�_���o�͂���
-		tst.l	d3				*  D3.L == ��f�B���N�g�������̐�
+		move.b	#1,print_dirheader		*  1 : 改行してディレクトリ・ヘッダを出力する
+		tst.l	d3				*  D3.L == 非ディレクトリ引数の数
 		bne	do_ls_dirargs
 
-		move.b	#-1,print_dirheader		*  -1 : ���s�����Ƀf�B���N�g���E�w�b�_���o�͂���
+		move.b	#-1,print_dirheader		*  -1 : 改行せずにディレクトリ・ヘッダを出力する
 		move.l	number_of_subdir,d0
 		subq.l	#1,d0
 		bhi	do_ls_dirargs
 
-		clr.b	print_dirheader			*  0 : �f�B���N�g���E�w�b�_���o�͂��Ȃ�
+		clr.b	print_dirheader			*  0 : ディレクトリ・ヘッダを出力しない
 do_ls_dirargs:
 		sf	have_to_headtail
 		bsr	ls_subdir
@@ -734,13 +734,13 @@ error_exit_3:
 		moveq	#3,d0
 		bra	exit_program
 ****************************************************************
-* doname - 1�̈�������������
+* doname - 1つの引数を処理する
 *
 * CALL
-*      A0     �����̐擪�A�h���X
+*      A0     引数の先頭アドレス
 *
 * RETURN
-*      D0.L   �j��
+*      D0.L   破壊
 ****************************************************************
 doname:
 		movem.l	d1-d3/a0-a5,-(a7)
@@ -767,7 +767,7 @@ doname_1:
 		movea.l	a0,a4
 		movea.l	a0,a2				*  A2 : pathname scanning pointer
 		lea	pathname(pc),a3			*  A3 : pathname appending pointer
-		move.l	#MAXPATH,d2			*  D2.L : A3 �̗e��
+		move.l	#MAXPATH,d2			*  D2.L : A3 の容量
 		cmpi.b	#':',1(a2)
 		bne	doname_drive_ok
 
@@ -794,8 +794,8 @@ doname_root_ok:
 		clr.b	(a3)
 		movea.l	a4,a0
 doname_loop:
-		move.l	a3,a4				*  A4 : pathname �̃t�@�C������
-		move.l	d2,d3				*  D3.L : �����܂ł̎c��e��
+		move.l	a3,a4				*  A4 : pathname のファイル名部
+		move.l	d2,d3				*  D3.L : ここまでの残り容量
 		movea.l	a2,a0
 		bsr	find_slashes
 		exg	a0,a2
@@ -821,7 +821,7 @@ doname_loop:
 
 		movea.l	a4,a3
 		move.l	d3,d2
-		movea.l	a0,a4				*  A4 : �o�^���閼�O�̐擪
+		movea.l	a0,a4				*  A4 : 登録する名前の先頭
 		lea	tmp_filesbuf+ST_NAME(pc),a0
 		bsr	strlen
 		sub.l	d0,d2
@@ -892,15 +892,15 @@ doname_done:
 
 		bsr	set_block_size
 		*
-		*  �������f�B���N�g���Ȃ�subdir�r�b�g��ON�ɂ���
+		*  引数がディレクトリならsubdirビットをONにする
 		*
 		btst.b	#MODEBIT_DIR,entry_mode(a1)
 		bne	doname_set_subdir_bit
 		*
-		*  �������f�B���N�g���ւ̃V���{���b�N�E�����N�̂Ƃ���subdir�r�b�g��ON�ɂ���
+		*  引数がディレクトリへのシンボリック・リンクのときもsubdirビットをONにする
 		*
-		*  ������ -l, -v �I�v�V�������w�肳��Ă���Ƃ��ɂ́C�t�@�C�������̖����� /
-		*  ���t���Ă��Ȃ����subdir��ON�ɂ��Ȃ�
+		*  ただし -l, -v オプションが指定されているときには，ファイル引数の末尾に /
+		*  が付いていなければsubdirをONにしない
 		*
 		move.w	entry_linkmode(a1),d0
 		bmi	doname_return
@@ -925,24 +925,24 @@ doname_too_long_path:
 		bsr	too_long_path
 		bra	doname_return
 ****************************************************************
-* ls_subdir - ENTRY�\���̃A�h���X�z�񂩂�T�u�f�B���N�g����T���C
-*             ���̃T�u�f�B���N�g�����̃t�@�C�����o�͂���
+* ls_subdir - ENTRY構造体アドレス配列からサブディレクトリを探し，
+*             そのサブディレクトリ下のファイルを出力する
 *
 * CALL
-*      entry_top         ENTRY�\���̃A�h���X�z��̐擪�A�h���X���i�[����Ă���
-*      number_of_subdir  ENTRY�\���̂̂����T�u�f�B���N�g���̐�
-*      print_dirheader   0 : �f�B���N�g���E�w�b�_���o�͂��Ȃ�
-*                        1 : ���s���ăf�B���N�g���E�w�b�_���o�͂���
-*                        -1 : ���s�����Ƀf�B���N�g���E�w�b�_���o�͂���
+*      entry_top         ENTRY構造体アドレス配列の先頭アドレスが格納されている
+*      number_of_subdir  ENTRY構造体のうちサブディレクトリの数
+*      print_dirheader   0 : ディレクトリ・ヘッダを出力しない
+*                        1 : 改行してディレクトリ・ヘッダを出力する
+*                        -1 : 改行せずにディレクトリ・ヘッダを出力する
 *
 * RETURN
 *      none
 *
 * NOTE
-*      ENTRY�\���̃A�h���X�z��Ƃ��̗v�f�͂��ׂ�free�����D
+*      ENTRY構造体アドレス配列とその要素はすべてfreeされる．
 *
-*      -R�I�v�V�����w�莞�ɂ́C�f�B���N�g���̐[�������ċA����D
-*      �X�^�b�N�ɒ��ӁD
+*      -Rオプション指定時には，ディレクトリの深さだけ再帰する．
+*      スタックに注意．
 ****************************************************************
 ls_subdir:
 		movem.l	d0-d3/a0-a4,-(a7)
@@ -951,15 +951,15 @@ ls_subdir:
 		movem.l	(a7)+,d0-d3/a0-a4
 		rts
 ****************************************************************
-* ls_onedir - �f�B���N�g�����I�[�v�����ĕ\������
+* ls_onedir - ディレクトリをオープンして表示する
 *
 * CALL
-*      pathname          �f�B���N�g���̃p�X���i�[����Ă���
-*                        ������ MAXHEAD �����ł��邱��
-*                        �Ō�ɗ]�v�� / ���t���Ă��Ȃ�����
+*      pathname          ディレクトリのパスが格納されている
+*                        長さは MAXHEAD 未満であること
+*                        最後に余計な / が付いていないこと
 *
 * RETURN
-*      D0-D3/A0-A4       �j��
+*      D0-D3/A0-A4       破壊
 ****************************************************************
 ls_onedir:
 		clr.l	entry_top
@@ -1002,39 +1002,39 @@ ls_onedir_head_ok:
 		move.l	a2,-(a7)
 		DOS	_FILES
 		lea	10(a7),a7
-				*  chdir �ō~��Ȃ��� files("*.*") ��������������Ƃ�������
-				*  �m���߂�ꂽ���C�����Ȃ�Ƃ͌����Ă����X�S�̂�5%���x�ł�
-				*  �邵�C�����ɂ���Ă͋t�ɒx���Ȃ邱�Ƃ��l������D����ɁC
+				*  chdir で降りながら files("*.*") する方が速いことが実験で
+				*  確かめられたが，速くなるとは言っても高々全体の5%程度であ
+				*  るし，条件によっては逆に遅くなることも考えられる．それに，
 				*
-				*  o �f�B���N�g���ւ̃V���{���b�N�E�����N�ɍ~����
-				*    chdir("..") �ł͖߂�Ȃ��̂ŁC���̏ꍇ�̓J�����g�E�f�B
-				*    ���N�g����ۑ����Ă�������
+				*  o ディレクトリへのシンボリック・リンクに降りると
+				*    chdir("..") では戻れないので，その場合はカレント・ディ
+				*    レクトリを保存しておく処理
 				*
-				*  o �f�B���N�g�������̏�����͂ǂ��ɂ��߂�Ȃ�����
+				*  o ディレクトリ引数の処理後はどこにも戻らない処理
 				*
-				*  o ^C�������ꂽ���ƃf�B���N�g���ɕ��A���Ă���I�����鏈
-				*    ��
+				*  o ^Cが押されたら作業ディレクトリに復帰してから終了する処
+				*    理
 				*
-				*  �Ȃǂ��s��˂΂Ȃ炸�C�v���O���������G�ɂȂ�D�����̏�
-				*  �����e�K�v�ȏꍇ�����f�s���悤�ɂ���ƁC�v���O�����͂���
-				*  �ɕ��G�ɂȂ�D
+				*  などを行わねばならず，プログラムが複雑になる．これらの処
+				*  理を‘必要な場合だけ’行うようにすると，プログラムはさら
+				*  に複雑になる．
 				*
-				*  �܂��C�e�f�B���N�g���ւ̃V���{���b�N�E�����N�f�̃p�X����
-				*  �� chdir �ł���Ƃ����O�񂪁C�����ɂ킽���ĕۏ؂���Ȃ���
-				*  ���m��Ȃ��i�C�����Ȃ��ł��Ȃ��j�D�������� chdir �́e�w��
-				*  �h���C�u�̃J�����g�E�f�B���N�g����ύX����f�t�@���N�V��
-				*  ���ł��邩��C�h���C�u���܂������� chdir ���� lndrv 1.00
-				*  �̎d�l�́CHuman68k �̖{���̎d�l���班�X��E���Ă���D����
-				*  �悤�Ȋϓ_����Clndrv �� chdir �̎d�l�Ɉˑ�����̂͏��X��
-				*  ���ƌ����D�Ȃ�� lndrv �� chdir �𒼐ڂ͌Ă΂��ɁC�ړI��
-				*  �f�B���N�g���̃p�X���� readlink �ɂ��ǂݎ���� chdir ��
-				*  ��Ηǂ��i���̏����́C���̃��[�`���ɓ��B����܂łɊ��ɍs
-				*  ���Ă��锤�ł��邩��C���ԓI�ɑ����邱�Ƃ͂Ȃ��j�̂����C
-				*  ������܂��v���O�����𕡎G�ɂ��Ă��܂��D
+				*  また，‘ディレクトリへのシンボリック・リンク’のパス名で
+				*  も chdir できるという前提が，将来にわたって保証されないか
+				*  も知れない（気がしないでもない）．そもそも chdir は‘指定
+				*  ドライブのカレント・ディレクトリを変更する’ファンクショ
+				*  ンであるから，ドライブをまたがって chdir する lndrv 1.00
+				*  の仕様は，Human68k の本来の仕様から少々逸脱している．この
+				*  ような観点から，lndrv の chdir の仕様に依存するのは少々危
+				*  険と見た．ならば lndrv の chdir を直接は呼ばずに，目的の
+				*  ディレクトリのパス名を readlink により読み取って chdir す
+				*  れば良い（この処理は，このルーチンに到達するまでに既に行
+				*  われている筈であるから，時間的に損することはない）のだが，
+				*  それもまたプログラムを複雑にしてしまう．
 				*
-				*  �Ƃ����킯�ŁCchdir�����͎̂Ă��D
+				*  というわけで，chdir方式は捨てた．
 				*
-				*  ������ Human68k �ł́C���̂܂܂ł������Ȃ�\��������D
+				*  将来の Human68k では，このままでも速くなる可能性もある．
 		cmp.l	#ENOFILE,d0
 		beq	open_directory_done
 
@@ -1083,7 +1083,7 @@ hidden_ok:
 		beq	open_directory_continue
 backfile_ok:
 	*
-	*  �G���g����o�^����
+	*  エントリを登録する
 	*
 		movea.l	a0,a1
 		movea.l	a3,a0
@@ -1119,7 +1119,7 @@ ls_onedir_add_entry_copy_stat:
 		beq	open_directory_continue
 
 		bsr	set_block_size
-		tst.w	d3				*  '.' �� '..' ���H
+		tst.w	d3				*  '.' か '..' か？
 		bne	open_directory_continue
 
 		bsr	test_subdir_bit
@@ -1162,14 +1162,14 @@ calc_total_continue:
 		addq.l	#8,a7
 ls_onedir_print_total_done:
 		move.l	number_of_entry,d0
-		beq	free_list			*  ���X�g��free���ċA��
+		beq	free_list			*  リストをfreeして帰る
 
 		movea.l	entry_top,a0
 		bsr	sort
 ls_onedir_sort_done:
 		bsr	output
 		tst.b	recurse
-		beq	free_list			*  ���X�g��free���ċA��
+		beq	free_list			*  リストをfreeして帰る
 ls_subdir_recurse:
 		moveq	#0,d1
 		movea.l	entry_top,a2
@@ -1190,10 +1190,10 @@ find_last_subdir_continue:
 		swap	d2
 		dbra	d2,find_last_subdir_high_loop
 
-		tst.l	d1				*  D1.L : �Ō��ENTRY�\���̃A�h���X
+		tst.l	d1				*  D1.L : 最後のENTRY構造体アドレス
 		beq	ls_subdir_return
 
-		movea.l	entry_top,a2			*  A2 : ENTRY�\���̃A�h���X�z��|�C���^
+		movea.l	entry_top,a2			*  A2 : ENTRY構造体アドレス配列ポインタ
 ls_subdir_loop:
 		movea.l	(a2),a0
 		btst.b	#FLAGBIT_SUBDIR,entry_flag(a0)
@@ -1219,7 +1219,7 @@ ls_subdir_header_ok:
 		cmp.l	(a2)+,d1
 		beq	ls_subdir_dolast
 
-		cmpa.l	#stack_lower+24,a7		*  �ċA�ɔ����ăX�^�b�N���x�����`�F�b�N
+		cmpa.l	#stack_lower+24,a7		*  再帰に備えてスタックレベルをチェック
 		bhs	recurse_ok
 
 		move.l	a2,-(a7)
@@ -1233,15 +1233,15 @@ recurse_ok:
 		movem.l	d1/a2-a3,-(a7)
 		move.l	entry_top,-(a7)
 		move.l	number_of_entry,-(a7)
-		bsr	ls_onedir			*  �m�ċA�n  24 Bytes/call
+		bsr	ls_onedir			*  ［再帰］  24 Bytes/call
 		move.l	(a7)+,number_of_entry
 		move.l	(a7)+,entry_top
 		movem.l	(a7)+,d1/a2-a3
 		bra	ls_subdir_loop
 
 ls_subdir_dolast:
-		bsr	free_list			*  ��������ȏニ�[�v���Ȃ�����A�ċA�̑O�Ƀ��X�g��free���邱�Ƃ��ł���
-		bra	ls_onedir			*  �m�ċA�n   0 Bytes/call
+		bsr	free_list			*  もうこれ以上ループしないから、再帰の前にリストをfreeすることができる
+		bra	ls_onedir			*  ［再帰］   0 Bytes/call
 
 LS_RECURSE_STACKSIZE	equ	24
 
@@ -1251,14 +1251,14 @@ ls_subdir_continue:
 ls_subdir_return:
 		bra	free_list	* rts
 *****************************************************************
-* add_entry - ENTRY��1�ǉ�����
+* add_entry - ENTRYを1つ追加する
 *
 * CALL
-*      A0     �o�^���閼�O�i������MAXPATH�ȓ��ł��邱�Ɓj
+*      A0     登録する名前（長さはMAXPATH以内であること）
 *
 * RETURN
-*      A1     �o�^����ENTRY�\���̂̃A�h���X
-*      D0.L   �j��
+*      A1     登録したENTRY構造体のアドレス
+*      D0.L   破壊
 *****************************************************************
 add_entry:
 		movem.l	d1/a0/a2,-(a7)
@@ -1300,13 +1300,13 @@ add_entry:
 
 xrealloc_malloc:
 		move.l	d1,d0
-		bsr	malloc				*  ��ʂ���
+		bsr	malloc				*  低位から
 		bmi	insufficient_memory
 
 		move.l	d0,entry_top
 xrealloc_ok:
 		move.l	#entry_struct_size*FILELIST_UNIT,d0
-		bsr	malloc_slice			*  ���ʂ���
+		bsr	malloc_slice			*  高位から
 		bmi	insufficient_memory
 
 		movea.l	d0,a2
@@ -1371,9 +1371,9 @@ lstat:
 
 		movem.l	d1/a1,-(a7)
 		clr.l	-(a7)
-		DOS	_SUPER				*  �X�[�p�[�o�C�U�E���[�h�ɐ؂芷����
+		DOS	_SUPER				*  スーパーバイザ・モードに切り換える
 		addq.l	#4,a7
-		move.l	d0,-(a7)			*  �O�� SSP �̒l
+		move.l	d0,-(a7)			*  前の SSP の値
 		movea.l	lndrv,a1
 		movea.l	LNDRV_LINK_FILES(a1),a1
 		move.w	#MODEVAL_ALL,-(a7)
@@ -1382,7 +1382,7 @@ lstat:
 		jsr	(a1)
 		lea	10(a7),a7
 		move.l	d0,d1
-		DOS	_SUPER				*  ���[�U�E���[�h�ɖ߂�
+		DOS	_SUPER				*  ユーザ・モードに戻す
 		addq.l	#4,a7
 		move.l	d1,d0
 		movem.l	(a7)+,d1/a1
@@ -1398,17 +1398,17 @@ stat:
 		rts
 *****************************************************************
 * test_link_if_necessary, do_test_link
-*      - �o�^����ENTRY���V���{���b�N�E�����N�Ȃ�ΕK�v�ȏ������s��
+*      - 登録したENTRYがシンボリック・リンクならば必要な処理を行う
 *
 * CALL
-*      A0     �t�@�C���̃p�X��
-*      A1     �t�@�C����o�^����ENTRY�\���̂̃A�h���X
+*      A0     ファイルのパス名
+*      A1     ファイルを登録したENTRY構造体のアドレス
 *
 * RETURN
-*      A0     stat�Ƃ��č̗p�����t�@�C���̃p�X���̐擪�A�h���X
-*             static �ȗ̈�Ȃ̂Œ��ӂ��邱��
-*             �������Aset_nostat �����Ƃ��ɂ� 0
-*      D0   �j��
+*      A0     statとして採用したファイルのパス名の先頭アドレス
+*             static な領域なので注意すること
+*             ただし、set_nostat したときには 0
+*      D0   破壊
 *****************************************************************
 test_link_if_necessary:
 		tst.b	replace_link
@@ -1445,9 +1445,9 @@ do_test_link_1:
 		move.l	d0,entry_linkpath(a1)
 chase_link_skip_malloc:
 		clr.l	-(a7)
-		DOS	_SUPER				*  �X�[�p�[�o�C�U�E���[�h�ɐ؂芷����
+		DOS	_SUPER				*  スーパーバイザ・モードに切り換える
 		addq.l	#4,a7
-		move.l	d0,-(a7)			*  �O�� SSP �̒l
+		move.l	d0,-(a7)			*  前の SSP の値
 		tst.b	long_format			*  -l, -v
 		beq	chase_link_1
 
@@ -1475,10 +1475,10 @@ chase_link_1:
 		movea.l	LNDRV_getrealpath(a2),a2
 		move.l	a0,-(a7)
 		pea	chase_link_tmp_path(pc)
-		jsr	(a2)				*  �Q�ƃt�@�C���̃p�X���𓾂�
+		jsr	(a2)				*  参照ファイルのパス名を得る
 		addq.l	#8,a7
-		move.l	d0,d2				*  D2.L : getrealpath��status
-		DOS	_SUPER				*  ���[�U�E���[�h�ɖ߂�
+		move.l	d0,d2				*  D2.L : getrealpathのstatus
+		DOS	_SUPER				*  ユーザ・モードに戻す
 		addq.l	#4,a7
 		move.l	a0,d3
 		tst.b	long_format			*  -l, -v
@@ -1505,7 +1505,7 @@ chase_link_readlink_done:
 		tst.b	d4
 		bne	stat_linkref
 
-		* ������ ( replace_link || mark_links || long_format ) == TRUE
+		* ここで ( replace_link || mark_links || long_format ) == TRUE
 
 		tst.b	replace_link
 		bne	stat_linkref
@@ -1513,13 +1513,13 @@ chase_link_readlink_done:
 		tst.b	mark_links
 		bne	stat_linkref
 
-		* ������ ( !replace_link && !mark_links && long_format ) == TRUE
+		* ここで ( !replace_link && !mark_links && long_format ) == TRUE
 
 		tst.b	mark_dirs
-		beq	test_link_done			*  �Q�ƃp�X����������Ηǂ�
+		beq	test_link_done			*  参照パス名だけあれば良い
 stat_linkref:
-		*  �Q�ƃt�@�C����stat�𓾂�
-		tst.l	d2				*  getrealpath�͐����������H
+		*  参照ファイルのstatを得る
+		tst.l	d2				*  getrealpathは成功したか？
 		bmi	test_link_done
 
 		sf	d2
@@ -1591,10 +1591,10 @@ chase_link_free_return:
 		clr.l	entry_linkpath(a1)
 		bra	test_link_done
 *****************************************************************
-* test_subdir_bit - �o�^����ENTRY���f�B���N�g���Ȃ��SUBDIR�t���O��ON�ɂ���
+* test_subdir_bit - 登録したENTRYがディレクトリならばSUBDIRフラグをONにする
 *
 * CALL
-*      A1     �t�@�C����o�^����ENTRY�\���̂̃A�h���X
+*      A1     ファイルを登録したENTRY構造体のアドレス
 *
 * RETURN
 *      none
@@ -1608,14 +1608,14 @@ test_subdir_bit:
 test_subdir_bit_ok:
 		rts
 *****************************************************************
-* set_block_size - �o�^����ENTRY�̃u���b�N�������߂ăZ�b�g����
+* set_block_size - 登録したENTRYのブロック数を求めてセットする
 *
 * CALL
-*      A0     �t�@�C���̃p�X��
-*      A1     �t�@�C����o�^����ENTRY�\���̂̃A�h���X
+*      A0     ファイルのパス名
+*      A1     ファイルを登録したENTRY構造体のアドレス
 *
 * RETURN
-*      D0.L   �j��
+*      D0.L   破壊
 *****************************************************************
 set_block_size:
 		move.b	entry_mode(a1),d0
@@ -1752,13 +1752,13 @@ do_set_block_size:
 set_block_size_return:
 		rts
 *****************************************************************
-* free_list - ENTRY�\���̃A�h���X�z��Ƃ��ׂĂ�ENTRY�\���̂�free����
+* free_list - ENTRY構造体アドレス配列とすべてのENTRY構造体をfreeする
 *
 * CALL
 *      none
 *
 * RETURN
-*      D0-D1/A0-A1   �j��
+*      D0-D1/A0-A1   破壊
 *****************************************************************
 free_list:
 		move.l	entry_top,d1
@@ -1793,19 +1793,19 @@ free_list_done:
 free_list_return:
 		rts
 ****************************************************************
-* output - ENTRY�\���̂̃��X�g���o�͂���
+* output - ENTRY構造体のリストを出力する
 *
 * CALL
-*      A0     ENTRY�\���̃A�h���X�z��̐擪�A�h���X
-*      D0.L   ENTRY��
+*      A0     ENTRY構造体アドレス配列の先頭アドレス
+*      D0.L   ENTRY数
 *
 * RETURN
 *      none
 ****************************************************************
 output:
 		movem.l	d0-d7/a0-a4,-(a7)
-		movea.l	a0,a2				*  A2 : ENTRY�\���̃A�h���X�z��|�C���^
-		move.l	d0,d2				*  D2.L : ENTRY��
+		movea.l	a0,a2				*  A2 : ENTRY構造体アドレス配列ポインタ
+		move.l	d0,d2				*  D2.L : ENTRY数
 		beq	output_return
 
 		tst.b	long_format
@@ -1819,7 +1819,7 @@ output:
 ****************
 output_multi_column:
 		*
-		*  �ő包�������ς� -> D1.L
+		*  最大桁幅を見積る -> D1.L
 		*
 		moveq	#0,d1
 		movem.l	d2/a2,-(a7)
@@ -1839,18 +1839,18 @@ multi_column_search_longest_continue:
 		tst.b	print_nblocks
 		beq	multi_column_calc_length_1
 
-		addq.l	#5,d1		*  -s �ł̐��l�\��������4���Ƃ��Č��ς�D
-					*  ������\���͂��邪�C�ȒP�̂��߁C�l�����Ȃ��D
+		addq.l	#5,d1		*  -s での数値表示桁数は4桁として見積る．
+					*  超える可能性はあるが，簡単のため，考慮しない．
 multi_column_calc_length_1:
 		tst.b	quote
 		beq	multi_column_calc_length_2
 
 		addq.l	#2,d1
 multi_column_calc_length_2:
-		addq.l	#2,d1		*  D1.L : 1���ڂ̍ő包��
+		addq.l	#2,d1		*  D1.L : 1項目の最大桁幅
 		move.l	d1,-(a7)
 		*
-		*  D3.L <- 1�s�ɓ���ő區�ڐ� = (�s�̌��� - 1) / 1���ڂ̍ő包��
+		*  D3.L <- 1行に入る最大項目数 = (行の桁幅 - 1) / 1項目の最大桁幅
 		*
 		move.l	columns,d0
 		subq.l	#1,d0
@@ -1860,18 +1860,18 @@ multi_column_calc_length_2:
 		move.l	d0,d3
 		bne	width_ok
 width_1:
-		moveq	#1,d3		*  1���ڂ�����Ȃ��ꍇ�́C1���ڂ���������̂Ƃ���
+		moveq	#1,d3		*  1項目も入らない場合は，1項目だけ入るものとする
 width_ok:
-		move.l	d2,d0		*  �G���g������
-		move.l	d3,d1		*  1�s�ɓ���ő區�ڐ���
-		bsr	divul		*  ����
-		move.l	d0,d4		*  D4.L : �s�� = �G���g���� / 1�s�ɓ���ő區�ڐ�
-		move.l	d1,d5		*  D5.L : �]��
-		beq	height_ok	*             ��������΍s���m��
+		move.l	d2,d0		*  エントリ数を
+		move.l	d3,d1		*  1行に入る最大項目数で
+		bsr	divul		*  割る
+		move.l	d0,d4		*  D4.L : 行数 = エントリ数 / 1行に入る最大項目数
+		move.l	d1,d5		*  D5.L : 余り
+		beq	height_ok	*             が無ければ行数確定
 
-		addq.l	#1,d4		*  �]�肪���� ... �s���͂����1�s����
+		addq.l	#1,d4		*  余りがある ... 行数はさらに1行多い
 		*
-		*  1�s�����Ȃ����D-x �łȂ���΁A�s�������Ƃ� 1�s�̍��ڐ����Čv�Z����D
+		*  1行多くなった．-x でなければ、行数をもとに 1行の項目数を再計算する．
 		*
 		cmpi.b	#2,format
 		beq	height_ok
@@ -1883,17 +1883,17 @@ width_ok:
 		move.l	d1,d5
 		beq	height_ok
 
-		addq.l	#1,d3		*  �]�肪���� ... 1�s�̍��ڐ��͂����1���ڑ���
-					*  ������ D5.L �� 1���ڑ����s��
+		addq.l	#1,d3		*  余りがある ... 1行の項目数はさらに1項目多い
+					*  ここで D5.L は 1項目多い行数
 height_ok:
 		*
-		*  D3.L = 1�s�̍��ڐ� != 0 ��
-		*  D4.L = �s�� != 0 ���m�肵���D
+		*  D3.L = 1行の項目数 != 0 と
+		*  D4.L = 行数 != 0 が確定した．
 		*
-		*  D5.L �ɁAENTRY�\���̃A�h���X�z����X�L��������X�e�b�v��ݒ肷��D
+		*  D5.L に、ENTRY構造体アドレス配列をスキャンするステップを設定する．
 		*
-		*    -x �łȂ���΁C�s���iD4.L�j�D
-		*    -x �Ȃ�C1�D
+		*    -x でなければ，行数（D4.L）．
+		*    -x なら，1．
 		*
 		move.l	d4,d5
 		cmpi.b	#2,format
@@ -1901,9 +1901,9 @@ height_ok:
 
 		moveq	#1,d5
 step_ok:
-		move.l	(a7)+,d6			*  D6.L : 1���ڂ̌���
+		move.l	(a7)+,d6			*  D6.L : 1項目の桁幅
 		*
-		*  �o�͊J�n
+		*  出力開始
 		*
 		moveq	#0,d7				*  D7.L : ENTRY index
 		moveq	#0,d1				*  D1.L : Y loop counter
@@ -1922,7 +1922,7 @@ output_multi_column_loop_x:
 
 		move.l	entry_nblocks(a3),d0
 		move.l	d3,-(a7)
-		moveq	#4,d3				*  �ŏ��t�B�[���h��
+		moveq	#4,d3				*  最小フィールド幅
 		bsr	bufprint_Nu
 		move.l	(a7)+,d3
 		addq.l	#5,d1
@@ -1971,7 +1971,7 @@ output_single_column_loop:
 		beq	output_single_column_size_ok
 
 		move.l	entry_nblocks(a3),d0
-		moveq	#4,d3				*  �ŏ��t�B�[���h��
+		moveq	#4,d3				*  最小フィールド幅
 		bsr	bufprint_Nu
 output_single_column_size_ok:
 		tst.b	long_format
@@ -2019,7 +2019,7 @@ long_format_mode_1:
 		*  size [byte]
 
 		move.l	entry_size(a3),d0
-		moveq	#8,d3				*  �ŏ��t�B�[���h��
+		moveq	#8,d3				*  最小フィールド幅
 		bsr	bufprint_Nu
 
 		*  datime
@@ -2041,7 +2041,7 @@ long_format_mode_1:
 		moveq	#0,d0
 		move.w	entry_date(a3),d0
 		and.l	#31,d0
-		moveq	#2,d3				*  �ŏ��t�B�[���h��
+		moveq	#2,d3				*  最小フィールド幅
 		bsr	bufprint_Nu
 		*  hh:mm or year
 		moveq	#0,d0
@@ -2050,11 +2050,11 @@ long_format_mode_1:
 
 		move.w	entry_date(a3),d0
 		cmp.w	present_date,d0
-		bhi	print_unix_date_year		*  �����ȍ~�̃t�@�C��
+		bhi	print_unix_date_year		*  明日以降のファイル
 
-		add.l	#$0200,d0			*  +1�N�̃Q�^
+		add.l	#$0200,d0			*  +1年のゲタ
 		cmp.l	cutoff_date,d0
-		bls	print_unix_date_year		*  6�P���O�܂ł̃t�@�C��
+		bls	print_unix_date_year		*  6ケ月前までのファイル
 
 		*  hour
 		moveq	#':',d5
@@ -2080,7 +2080,7 @@ print_unix_date_year:
 		lsr.w	#1,d0
 		add.w	#1980,d0
 print_unix_date_year_1:
-		moveq	#5,d3				*  �ŏ��t�B�[���h��
+		moveq	#5,d3				*  最小フィールド幅
 		bsr	bufprint_Nu
 		bra	long_format_misc_ok
 
@@ -2171,16 +2171,16 @@ output_inline_1:
 		tst.b	print_nblocks
 		beq	output_inline_2
 
-		addq.l	#5,d0		*  -s �ł̐��l�\��������4���Ƃ��Č��ς�D
-					*  ������\���͂��邪�C�ȒP�̂��߁C�l�����Ȃ��D
+		addq.l	#5,d0		*  -s での数値表示桁数は4桁として見積る．
+					*  超える可能性はあるが，簡単のため，考慮しない．
 output_inline_2:
 		tst.l	d2
 		beq	output_inline_3
 
-		addq.l	#2,d0		*  ', '�̕�
+		addq.l	#2,d0		*  ', 'の分
 output_inline_3:
-		addq.l	#1,d0		*  �^�C�v�E�}�[�N1������
-					*  �t���Ȃ��\���͂��邪�C�ȒP�̂��߁C�l�����Ȃ��D
+		addq.l	#1,d0		*  タイプ・マーク1文字分
+					*  付かない可能性はあるが，簡単のため，考慮しない．
 
 		add.l	d3,d0
 		cmp.l	columns,d0
@@ -2195,8 +2195,8 @@ do_output_inline:
 
 		move.l	entry_nblocks(a3),d0
 		movem.l	d2-d3,-(a7)
-		moveq	#1,d3				*  �ŏ��t�B�[���h��
-		moveq	#1,d4				*  ���Ȃ��Ƃ��o�͂��鐔���̌���
+		moveq	#1,d3				*  最小フィールド幅
+		moveq	#1,d4				*  少なくとも出力する数字の桁数
 		lea	utoa(pc),a0			*  convert procedure
 		bsr	bufprintfu
 		movem.l	(a7)+,d2-d3
@@ -2233,8 +2233,8 @@ output_return:
 bufprint_Nu:
 		movem.l	d2-d5/a0,-(a7)
 		moveq	#' ',d5
-		moveq	#' ',d2				*  pad����
-		moveq	#1,d4				*  ���Ȃ��Ƃ��o�͂��鐔���̌���
+		moveq	#' ',d2				*  pad文字
+		moveq	#1,d4				*  少なくとも出力する数字の桁数
 bufprint_Nu_2:
 		lea	utoa(pc),a0			*  convert procedure
 		bsr	bufprintfu
@@ -2244,10 +2244,10 @@ bufprint_Nu_2:
 
 bufprint_02u:
 		movem.l	d2-d5/a0,-(a7)
-		moveq	#2,d4				*  ���Ȃ��Ƃ��o�͂��鐔���̌���
+		moveq	#2,d4				*  少なくとも出力する数字の桁数
 bufprint_0Nu:
-		move.l	d4,d3				*  �ŏ��t�B�[���h��
-		moveq	#'0',d2				*  pad����
+		move.l	d4,d3				*  最小フィールド幅
+		moveq	#'0',d2				*  pad文字
 		bra	bufprint_Nu_2
 
 bufprint_04u:
@@ -2255,14 +2255,14 @@ bufprint_04u:
 		moveq	#4,d4
 		bra	bufprint_0Nu
 ****************************************************************
-* print_name - �t�@�C�������o�͂���
+* print_name - ファイル名を出力する
 *
 * CALL
-*      A0     �t�@�C����
+*      A0     ファイル名
 *      D6.W   mode
 *
 * RETURN
-*      D0.L   �o�͂�������
+*      D0.L   出力した桁幅
 *      D6.W   mode
 ****************************************************************
 print_name:
@@ -2336,9 +2336,9 @@ print_name_not_graph:
 		bsr	bufout
 		move.l	d2,d0
 		addq.l	#1,d1
-		moveq	#'0',d2				*  pad����
-		moveq	#3,d3				*  �ŏ��t�B�[���h��
-		moveq	#3,d4				*  ���Ȃ��Ƃ��o�͂��鐔���̌���
+		moveq	#'0',d2				*  pad文字
+		moveq	#3,d3				*  最小フィールド幅
+		moveq	#3,d4				*  少なくとも出力する数字の桁数
 		lea	utoao(pc),a0			*  convert procedure
 		bsr	bufprintfu
 		add.l	d0,d1
@@ -2375,15 +2375,15 @@ doquote:
 doquote_return:
 		rts
 ****************************************************************
-* print_mark - /*@�}�[�N���o�͂���
+* print_mark - /*@マークを出力する
 *
 * CALL
-*      A0     �t�@�C����
+*      A0     ファイル名
 *      D6.B   mode
 *      D7.W   linkmode
 *
 * RETURN
-*      D0.L   �o�͂�������
+*      D0.L   出力した桁幅
 *      D6.B   mode
 ****************************************************************
 print_mark:
@@ -2443,12 +2443,12 @@ print_mark_return_0:
 *
 * CALL
 *      D6.B   mode
-*      A0     �t�@�C����
+*      A0     ファイル名
 *
 * RETURN
-*      CCR    ���s�\�Ȃ� NE
+*      CCR    実行可能なら NE
 *      D6.B   mode
-*      D0-D1/A1   �j��
+*      D0-D1/A1   破壊
 ****************************************************************
 check_exec_true:
 		bset	#MODEBIT_EXE,d6
@@ -2472,7 +2472,7 @@ check_exec_return:
 ****************************************************************
 bufprintfu:
 		movem.l	d1/a1-a2,-(a7)
-		moveq	#0,d1				*  �E�l��
+		moveq	#0,d1				*  右詰め
 		lea	bufout(pc),a1			*  output procedure
 		suba.l	a2,a2
 		bsr	printfi
@@ -2556,7 +2556,7 @@ bufset_return:
 		movem.l	(a7)+,d1-d2/a0
 		rts
 ****************************************************************
-* putline - �o�b�t�@�s�i_linebuf�`_bufp�j���o�͂���
+* putline - バッファ行（_linebuf〜_bufp）を出力する
 *
 * CALL
 *      none
@@ -2594,13 +2594,13 @@ flush_buffer:
 		movem.l	(a7)+,d0/a0
 		rts
 ****************************************************************
-* namewidth - ������̌���
+* namewidth - 文字列の桁幅
 *
 * CALL
-*      A0     ������̐擪�A�h���X
+*      A0     文字列の先頭アドレス
 *
 * RETURN
-*      D0.L   ����
+*      D0.L   桁幅
 ****************************************************************
 namewidth:
 		movem.l	d1/a0,-(a7)
@@ -2649,13 +2649,13 @@ namewidth_done:
 		movem.l	(a7)+,d1/a0
 		rts
 ****************************************************************
-* sjiswidth - �V�t�gJIS�����̌���
+* sjiswidth - シフトJIS文字の桁幅
 *
 * CALL
-*      D0.B   �V�t�gJIS�����̑�1�o�C�g
+*      D0.B   シフトJIS文字の第1バイト
 *
 * RETURN
-*      D0.L   ����
+*      D0.L   桁幅
 ****************************************************************
 sjiswidth:
 		cmp.b	#$80,d0
@@ -2671,14 +2671,14 @@ sjiswidth_1:
 		moveq	#1,d0
 		rts
 ****************************************************************
-* cmp_name, cmp_extention, cmp_time, cmp_size - sort�p�̔�r���[�`��
+* cmp_name, cmp_extention, cmp_time, cmp_size - sort用の比較ルーチン
 *
 * CALL
-*      A0, A1   ENTRY�\���̂̃A�h���X
+*      A0, A1   ENTRY構造体のアドレス
 *
 * RETURN
-*      CCR      ��r����
-*      D0.L     �j��
+*      CCR      比較結果
+*      D0.L     破壊
 ****************************************************************
 cmp_time:
 		move.l	entry_datime(a1),d0
@@ -2720,11 +2720,11 @@ cmp_name:
 		beq	strcmp
 		rts
 *****************************************************************
-* sort - ENTRY�\���̂��\�[�g����i�q�[�v�E�\�[�g�j
+* sort - ENTRY構造体をソートする（ヒープ・ソート）
 *
 * CALL
-*      A0     ENTRY�\���̃A�h���X�z��̐擪�A�h���X
-*      D0.L   �v�f��
+*      A0     ENTRY構造体アドレス配列の先頭アドレス
+*      D0.L   要素数
 *
 * RETURN
 *      none
@@ -2734,7 +2734,7 @@ sort:
 		move.l	cmp_func,d1
 		beq	sort_done
 
-		movea.l	d1,a2				*  A2 : ��r���[�`���̃G���g���E�A�h���X
+		movea.l	d1,a2				*  A2 : 比較ルーチンのエントリ・アドレス
 		movea.l	a0,a3
 		move.l	d0,d3
 		move.l	d0,d2
@@ -2834,18 +2834,18 @@ comp_reverse:
 		not.b	d0
 		rts
 ****************************************************************
-* suffix2 - �t�@�C�����̊g���q���̃A�h���X
+* suffix2 - ファイル名の拡張子部のアドレス
 *
 * CALL
-*      A0     �t�@�C�����̐擪�A�h���X
+*      A0     ファイル名の先頭アドレス
 *
 * RETURN
-*      A0     �g���q���̃A�h���X�i�e.�f�̈ʒu�D�e.�f��������΍Ō�� NUL ���w���j
+*      A0     拡張子部のアドレス（‘.’の位置．‘.’が無ければ最後の NUL を指す）
 *      CCR    TST.B (A0)
 *
 * NOTE
-*      have_to_headtail �� 0 �łȂ���΁Cheadtail���Ă��tail������X�L��������D
-*      tail���̐擪�� . �̘A���̓X�L�b�v����D
+*      have_to_headtail が 0 でなければ，headtailを呼んでtail部からスキャンする．
+*      tail部の先頭の . の連続はスキップする．
 *****************************************************************
 suffix2:
 		tst.b	have_to_headtail
@@ -2862,13 +2862,13 @@ suffix2_skip_first_period:
 		subq.l	#1,a0
 		bra	suffix
 ****************************************************************
-* is_reldir - ���O�� . �� .. �ł��邩�ǂ����𒲂ׂ�
+* is_reldir - 名前が . か .. であるかどうかを調べる
 *
 * CALL
-*      A0     ���O
+*      A0     名前
 *
 * RETURN
-*      D0.L   ���O�� . �� .. �Ȃ�� 1�C�����Ȃ��� 0
+*      D0.L   名前が . か .. ならば 1，さもなくば 0
 ****************************************************************
 is_reldir:
 		moveq	#0,d0
@@ -2888,16 +2888,16 @@ is_reldir_return_true:
 is_reldir_return:
 		rts
 ****************************************************************
-* tailmatch - ������̖������p�^�[���ƈ�v���邩�ǂ������ׂ�
+* tailmatch - 文字列の末尾がパターンと一致するかどうか調べる
 *
 * CALL
-*      A0     ������
-*      A1     �p�^�[��
-*      D0.L   ������̒���
-*      D1.L   �p�^�[���̒���
+*      A0     文字列
+*      A1     パターン
+*      D0.L   文字列の長さ
+*      D1.L   パターンの長さ
 *
 * RETURN
-*      CCR    �}�b�`����� EQ�C�����Ȃ��� NE�D
+*      CCR    マッチすれば EQ，さもなくば NE．
 ****************************************************************
 tailmatch:
 		movem.l	d0-d1/a0,-(a7)
@@ -2986,16 +2986,16 @@ werror:
 	dc.b	'## ls 1.5 ##  Copyright(C)1992-94 by Itagaki Fumihiko',0
 
 msg_myname:			dc.b	'ls: ',0
-msg_dos_version_mismatch:	dc.b	'�o�[�W����2.00�ȍ~��Human68k���K�v�ł�',CR,LF,0
-msg_too_long_path:		dc.b	': �p�X�������߂��܂�',CR,LF,0
-msg_nofile:			dc.b	': ���̂悤�ȃt�@�C����f�B���N�g���͂���܂���',CR,LF,0
-msg_dir_too_deep:		dc.b	': �f�B���N�g�����[�߂��ď����ł��܂���',CR,LF,0
-msg_no_memory:			dc.b	'������������܂���',CR,LF,0
-msg_illegal_option:		dc.b	'�s���ȃI�v�V���� -- ',0
-msg_bad_width:			dc.b	'���̎w�肪����������܂���',0
-msg_too_few_args:		dc.b	'����������܂���',0
+msg_dos_version_mismatch:	dc.b	'バージョン2.00以降のHuman68kが必要です',CR,LF,0
+msg_too_long_path:		dc.b	': パス名が長過ぎます',CR,LF,0
+msg_nofile:			dc.b	': このようなファイルやディレクトリはありません',CR,LF,0
+msg_dir_too_deep:		dc.b	': ディレクトリが深過ぎて処理できません',CR,LF,0
+msg_no_memory:			dc.b	'メモリが足りません',CR,LF,0
+msg_illegal_option:		dc.b	'不正なオプション -- ',0
+msg_bad_width:			dc.b	'幅の指定が正しくありません',0
+msg_too_few_args:		dc.b	'引数が足りません',0
 msg_usage:			dc.b	CR,LF
-				dc.b	'�g�p�@:  ls [-1ABCDEFGLPQRSUVXabdeflmpqrstvx] [-w <��>] [--] [<�t�@�C��>] ...'
+				dc.b	'使用法:  ls [-1ABCDEFGLPQRSUVXabdeflmpqrstvx] [-w <幅>] [--] [<ファイル>] ...'
 str_newline:			dc.b	CR,LF,0
 default_arg:			dc.b	'.',0
 str_dotX:			dc.b	'.X',0
@@ -3032,7 +3032,7 @@ montab:
 	dc.b	' 14',0
 	dc.b	' 15',0
 **
-**  �ϐ�
+**  変数
 **
 .even
 colors:			dc.l	str_default_color
@@ -3100,10 +3100,10 @@ fatchkbuf:		ds.b	2+8*FATCHK_STATIC+4
 .even
 
 		ds.b	16384
-		*  �}�[�W���ƃX�[�p�[�o�C�U�E�X�^�b�N�Ƃ����˂�16KB�m�ۂ��Ă����D
+		*  マージンとスーパーバイザ・スタックとを兼ねて16KB確保しておく．
 stack_lower:
 		ds.b	LS_RECURSE_STACKSIZE*(MAXRECURSE+1)
-		*  �K�v�ȃX�^�b�N�ʂ́C�ċA�̓x�ɏ�����X�^�b�N�ʂƂ��̉񐔂ƂŌ��܂�D
+		*  必要なスタック量は，再帰の度に消費されるスタック量とその回数とで決まる．
 		ds.b	16
 .even
 stack_bottom:
